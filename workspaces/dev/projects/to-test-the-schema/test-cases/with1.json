@@ -1,0 +1,192 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "5g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "with1",
+  "email" : [ ],
+  "flowDesc" : "with1",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "source" : {
+      "dependentJob" : true,
+      "description" : "source component",
+      "id" : "source",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "datasource",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Jan_2020_ontime" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "Jan_2020_ontime",
+          "tblSize" : "10.52",
+          "tblRecordCount" : 49518,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 610,
+        "y" : 103
+      }
+    },
+    "target" : {
+      "dependentJob" : true,
+      "description" : "target component",
+      "id" : "target",
+      "sourceData" : [ {
+        "datasetFormat" : "JDBC",
+        "databaseName" : "sampledb_src",
+        "datasetPath" : "projects",
+        "jdbcData" : {
+          "connectionName" : "datasource",
+          "groupName" : "dev"
+        },
+        "tableNamesList" : {
+          "Jan_2020_ontime" : null
+        },
+        "tableProperties" : [ {
+          "tblName" : "Jan_2020_ontime",
+          "tblSize" : "10.52",
+          "tblRecordCount" : 49518,
+          "primaryKeys" : [ ],
+          "indexKeys" : [ ],
+          "foreignKeys" : [ ],
+          "primaryKeysEnabled" : true,
+          "indexKeysEnabled" : false,
+          "foreignKeysEnabled" : false
+        } ]
+      } ],
+      "position" : {
+        "x" : 599,
+        "y" : 346
+      }
+    },
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ {
+        "unitTestCaseId" : 102669617502,
+        "matchBoth" : true,
+        "compareType" : "CELL_BY_CELL_COMPARE",
+        "compareColumns" : false,
+        "compareCommonColumnsOnly" : true,
+        "srcDestTableMap" : {
+          "Jan_2020_ontime" : "Jan_2020_ontime"
+        },
+        "srcDestComponentMap" : {
+          "source" : "target"
+        },
+        "saveAllDiffOutput" : "",
+        "validateRowsCount" : false,
+        "tolerance" : [ ],
+        "sqlTransform" : [ ],
+        "compareKey" : [ ],
+        "compareKeyNew" : [ ],
+        "columnMapping" : [ {
+          "srcColumn" : "TAIL_NUM",
+          "destColumn" : "TAIL_NUM"
+        }, {
+          "srcColumn" : "ORIGIN_AIRPORT_SEQ_ID",
+          "destColumn" : "ORIGIN_AIRPORT_SEQ_ID"
+        }, {
+          "srcColumn" : "ORIGIN_AIRPORT_ID",
+          "destColumn" : "ORIGIN_AIRPORT_ID"
+        }, {
+          "srcColumn" : "ORIGIN",
+          "destColumn" : "ORIGIN"
+        }, {
+          "srcColumn" : "OP_UNIQUE_CARRIER",
+          "destColumn" : "OP_UNIQUE_CARRIER"
+        }, {
+          "srcColumn" : "OP_CARRIER_FL_NUM",
+          "destColumn" : "OP_CARRIER_FL_NUM"
+        }, {
+          "srcColumn" : "OP_CARRIER_AIRLINE_ID",
+          "destColumn" : "OP_CARRIER_AIRLINE_ID"
+        }, {
+          "srcColumn" : "OP_CARRIER",
+          "destColumn" : "OP_CARRIER"
+        }, {
+          "srcColumn" : "DIVERTED",
+          "destColumn" : "DIVERTED"
+        }, {
+          "srcColumn" : "DISTANCE",
+          "destColumn" : "DISTANCE"
+        }, {
+          "srcColumn" : "DEST_AIRPORT_SEQ_ID",
+          "destColumn" : "DEST_AIRPORT_SEQ_ID"
+        }, {
+          "srcColumn" : "DEST_AIRPORT_ID",
+          "destColumn" : "DEST_AIRPORT_ID"
+        }, {
+          "srcColumn" : "DEST",
+          "destColumn" : "DEST"
+        }, {
+          "srcColumn" : "DEP_TIME_BLK",
+          "destColumn" : "DEP_TIME_BLK"
+        }, {
+          "srcColumn" : "DEP_TIME",
+          "destColumn" : "DEP_TIME"
+        }, {
+          "srcColumn" : "DEP_DEL15",
+          "destColumn" : "DEP_DEL15"
+        }, {
+          "srcColumn" : "DAY_OF_WEEK",
+          "destColumn" : "DAY_OF_WEEK"
+        }, {
+          "srcColumn" : "DAY_OF_MONTH",
+          "destColumn" : "DAY_OF_MONTH"
+        }, {
+          "srcColumn" : "CANCELLED",
+          "destColumn" : "CANCELLED"
+        }, {
+          "srcColumn" : "ARR_TIME",
+          "destColumn" : "ARR_TIME"
+        }, {
+          "srcColumn" : "ARR_DEL15",
+          "destColumn" : "ARR_DEL15"
+        } ],
+        "keyValueProperties" : {
+          "DETECT_COMPARE_KEYS" : "false",
+          "DETECT_COMPARE_KEYS_LIMIT" : "5"
+        }
+      } ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "OUTER_JOIN_BASED_COMPARE" : "true",
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[{\"id\":\"eb1b14ae-474e-4748-997f-bc7140ae5064\",\"from\":\"source\",\"type\":\"Table\",\"connectionName\":\"datasource\",\"schemaName\":\"sampledb_src\",\"typeTable\":\"TABLE\",\"tableName\":\"Jan_2020_ontime\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":49518,\"tableSize\":10.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}],\"target\":[{\"id\":\"799d97a9-253d-48e8-8360-17446bdf01a7\",\"from\":\"target\",\"type\":\"Table\",\"connectionName\":\"datasource\",\"schemaName\":\"sampledb_src\",\"typeTable\":\"TABLE\",\"tableName\":\"Jan_2020_ontime\",\"partitionProperties\":{\"numberOfPart\":0,\"column\":null},\"defaultSchema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"schema\":[{\"columnName\":\"ARR_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ARR_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"CANCELLED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_MONTH\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DAY_OF_WEEK\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_DEL15\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":true,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEP_TIME_BLK\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":false,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DEST_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DISTANCE\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"DIVERTED\",\"columnType\":\"decimal(10,0)\",\"actualColumnType\":\"decimal\",\"nullable\":false,\"columnMaxLength\":10,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_AIRLINE_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_CARRIER_FL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"OP_UNIQUE_CARRIER\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"columnType\":\"long\",\"actualColumnType\":\"bigint\",\"nullable\":false,\"columnMaxLength\":19,\"uniqueKey\":false,\"primaryKey\":false},{\"columnName\":\"TAIL_NUM\",\"columnType\":\"string\",\"actualColumnType\":\"varchar\",\"nullable\":true,\"columnMaxLength\":100,\"uniqueKey\":false,\"primaryKey\":false}],\"sampleData\":null,\"sqlExecution\":null,\"primaryKey\":null,\"foreignKeyInfo\":null,\"count\":49518,\"tableSize\":10.52,\"noOfPartition\":0,\"partitionColumn\":null,\"indexInfo\":null}]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":5,\"comparisonType\":\"OUTER_JOIN_BASED_COMPARE\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"with1\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{\"102669617502\":{\"source\":\"eb1b14ae-474e-4748-997f-bc7140ae5064\",\"target\":\"799d97a9-253d-48e8-8360-17446bdf01a7\",\"matchBoth\":\"a=b\",\"columnMapping\":[{\"id\":\"b7dbf917-2004-44b7-a603-a6782bd425a6\",\"sourceColumnName\":\"TAIL_NUM\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"TAIL_NUM\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"95ac1c6d-4cd9-4b98-80cd-d6cdc8fadaac\",\"sourceColumnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"ORIGIN_AIRPORT_SEQ_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"dcb38384-582d-47d7-8e9f-c0cbaac85cc5\",\"sourceColumnName\":\"ORIGIN_AIRPORT_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"ORIGIN_AIRPORT_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4bfd2b3f-3747-4cd4-9c41-0c57e8fbe38e\",\"sourceColumnName\":\"ORIGIN\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"ORIGIN\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"eef10b47-3ac2-4606-aef3-58e40fabbc6f\",\"sourceColumnName\":\"OP_UNIQUE_CARRIER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_UNIQUE_CARRIER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ac1138e3-6437-4da2-a0a3-cf526569cb73\",\"sourceColumnName\":\"OP_CARRIER_FL_NUM\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_CARRIER_FL_NUM\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c321b786-c506-473d-b32f-f39e802c5e0f\",\"sourceColumnName\":\"OP_CARRIER_AIRLINE_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"OP_CARRIER_AIRLINE_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"bd2b95d6-70d3-41aa-9808-347f73863142\",\"sourceColumnName\":\"OP_CARRIER\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"OP_CARRIER\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"0366bd8a-20aa-40ba-bb15-2712e480e8e6\",\"sourceColumnName\":\"DIVERTED\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"DIVERTED\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"aca960f5-e836-428b-8ae5-8c3e6521aa0f\",\"sourceColumnName\":\"DISTANCE\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"DISTANCE\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"cedaf1d6-b9ec-445b-8730-217ee3eff0a9\",\"sourceColumnName\":\"DEST_AIRPORT_SEQ_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DEST_AIRPORT_SEQ_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ca34c508-f9ed-4d54-8c40-d431bcef2a5d\",\"sourceColumnName\":\"DEST_AIRPORT_ID\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DEST_AIRPORT_ID\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"ed09e5f1-4b8c-43ae-8f05-2a3b5dc908f1\",\"sourceColumnName\":\"DEST\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"DEST\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"765086e2-7bee-4147-8df3-5f18e6512d59\",\"sourceColumnName\":\"DEP_TIME_BLK\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"DEP_TIME_BLK\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"06aa4063-72f7-436d-9301-da0b504b2660\",\"sourceColumnName\":\"DEP_TIME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":false,\"targetColumnName\":\"DEP_TIME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"4bc83a82-eb81-4a58-b5a7-48b3f5e23c67\",\"sourceColumnName\":\"DEP_DEL15\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":true,\"targetColumnName\":\"DEP_DEL15\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"bf6c33a2-5fd0-4f12-a935-82169f0eeb71\",\"sourceColumnName\":\"DAY_OF_WEEK\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DAY_OF_WEEK\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"e57182e7-8b8c-4e53-8c36-bd85ec0bd065\",\"sourceColumnName\":\"DAY_OF_MONTH\",\"sourceColumnType\":\"long\",\"sourceActualColumnType\":\"bigint\",\"sourceNullable\":false,\"targetColumnName\":\"DAY_OF_MONTH\",\"targetColumnType\":\"long\",\"targetActualColumnType\":\"bigint\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"c57793ed-b9d8-4348-a7d5-44b4696b773b\",\"sourceColumnName\":\"CANCELLED\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":false,\"targetColumnName\":\"CANCELLED\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":false,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"afe6280b-ab71-47ca-a51a-c369647db089\",\"sourceColumnName\":\"ARR_TIME\",\"sourceColumnType\":\"string\",\"sourceActualColumnType\":\"varchar\",\"sourceNullable\":true,\"targetColumnName\":\"ARR_TIME\",\"targetColumnType\":\"string\",\"targetActualColumnType\":\"varchar\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false},{\"id\":\"2d9c807a-a220-44d4-bb1a-21e27014fc01\",\"sourceColumnName\":\"ARR_DEL15\",\"sourceColumnType\":\"decimal(10,0)\",\"sourceActualColumnType\":\"decimal\",\"sourceNullable\":true,\"targetColumnName\":\"ARR_DEL15\",\"targetColumnType\":\"decimal(10,0)\",\"targetActualColumnType\":\"decimal\",\"targetNullable\":true,\"isPrimaryKey\":false,\"isBackendPrimaryKey\":false}],\"sourceColumn\":\"\",\"targetColumn\":\"\"}}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[{\"unitTestCaseId\":\"102669617502\",\"deleted\":false,\"saved\":true,\"updated\":false}]}",
+  "flowId" : 12642,
+  "dmsProjectId" : 7,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-04-01T20:23:50.920470Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}
