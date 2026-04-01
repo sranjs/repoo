@@ -1,0 +1,42 @@
+{
+  "executorCores" : 2,
+  "executorMemory" : "2g",
+  "numExecutors" : 2,
+  "executeOn" : "LOCAL",
+  "flowName" : "testvase",
+  "email" : [ ],
+  "flowDesc" : "testvase",
+  "hadoop" : false,
+  "livy" : false,
+  "root" : "dataCompare",
+  "parameters" : [ ],
+  "flowType" : "CELL BY CELL COMPARE",
+  "jobMap" : {
+    "dataCompare" : {
+      "dependentJob" : true,
+      "dependsOn" : [ "source", "target" ],
+      "description" : "dataCompare component",
+      "id" : "dataCompare",
+      "jobTypes" : [ "CELL_BY_CELL_COMPARE" ],
+      "filesCompareList" : [ ],
+      "position" : {
+        "x" : 819,
+        "y" : 181
+      },
+      "keyValueProps" : {
+        "CONVERT_NUMBER_TO_LONG" : "false",
+        "BAD_RECORD_COUNT" : "10"
+      }
+    }
+  },
+  "groupName" : "dev",
+  "UIDataModel" : "{\"newUI\":true,\"test_case\":{\"schema_compare_explicitly\":false,\"tablesList\":{\"source\":[],\"target\":[]}},\"configuration\":{\"cluster\":\"LOCAL\",\"java_process\":2,\"threads\":2,\"memory\":2,\"comparisonType\":\"default\",\"comparisonTypeSelectedByUser\":false,\"badRecordsCount\":10,\"countsCompareTolerance\":0,\"convertNumberToLong\":false,\"stopDifferences\":false,\"dataProfileBasic\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_SOURCE\":false,\"IGNORE_ADDITIONAL_COLUMN_FROM_TARGET\":false,\"IGNORE_COLUMN_CASE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_DATATYPE_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_PRIMARYKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_INDEXKEY_SCHEMA_COMPARE\":false,\"IGNORE_COLUMN_NULLABILITY_SCHEMA_COMPARE\":false,\"chunks\":false,\"SAVE_DIFFERENCES_TO_CSV_FILE_PATH\":\"\",\"SAVE_DIFFERENCES_TO_CSV_FILE\":false,\"notification\":{\"email\":false,\"slack\":false,\"template\":\"default\",\"mailingList\":\"\",\"notifyOn\":\"ALWAYS\",\"edit\":false},\"test_case_name\":\"testvase\",\"data_monitoring\":false,\"dimensions\":[],\"aggregations\":[],\"FILE_CREATED_TIME\":\"CURRENT_TIME\",\"FILE_DATE_FORMAT\":\"\"},\"mapping\":{\"mappings\":{}},\"dataQualityState\":{},\"columnRules\":{},\"dynamicSql\":\"\",\"dynamicSQLEnabled\":false,\"dataStandarizations\":{\"columnStandarization\":{\"data\":{},\"arrangeColumnsInOriginalOrder\":false,\"moveNewColumnsToRight\":false},\"sqlTransformation\":{\"sql\":\"\",\"sqlName\":\"\",\"editData\":null,\"data\":{}}},\"outputData\":[],\"notes\":[],\"unitTests\":[]}",
+  "flowId" : 12645,
+  "dmsProjectId" : 6,
+  "syncInfo" : {
+    "syncId" : "PROJECT",
+    "timestamp" : "2026-04-01T20:26:59.840485100Z",
+    "syncType" : "PROJECT",
+    "user" : "system"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id" : 4,
+  "name" : "RenamedThisSubFolder",
+  "description" : " ",
+  "fileType" : "folder",
+  "projectLevel" : "/",
+  "groupName" : "dev",
+  "iconId" : "0",
+  "status" : "RECYCLEBIN",
+  "metadata" : {
+    "createdBy" : "dataops",
+    "updatedBy" : "dataops",
+    "createdDate" : "2026-02-03T11:02:42Z",
+    "updatedDate" : "2026-02-03T11:19Z"
+  }
+}

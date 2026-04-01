@@ -1,0 +1,18 @@
+{
+  "id" : 3,
+  "name" : "CreatedAProject",
+  "description" : " ",
+  "fileType" : "project",
+  "projectLevel" : "/2/5",
+  "groupName" : "dev",
+  "iconId" : "0",
+  "status" : "ACTIVE",
+  "enabled" : true,
+  "endDate" : null,
+  "metadata" : {
+    "createdBy" : "dataops",
+    "updatedBy" : "dataops",
+    "createdDate" : "2026-02-03T10:55:47Z",
+    "updatedDate" : "2026-02-03T11:18:51Z"
+  }
+}

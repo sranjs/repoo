@@ -1,0 +1,18 @@
+{
+  "id" : 6,
+  "name" : "ProjectToTestTheSchema",
+  "description" : " ",
+  "fileType" : "project",
+  "projectLevel" : "/2",
+  "groupName" : "dev",
+  "iconId" : "0",
+  "status" : "ACTIVE",
+  "enabled" : true,
+  "endDate" : null,
+  "metadata" : {
+    "createdBy" : "dataops",
+    "updatedBy" : null,
+    "createdDate" : "2026-02-12T13:15:35Z",
+    "updatedDate" : null
+  }
+}
