@@ -1,6 +1,6 @@
 {
   "id" : 10,
-  "name" : "subfolder",
+  "name" : "subfolder-rename",
   "description" : " ",
   "fileType" : "folder",
   "projectLevel" : "/8",
@@ -9,8 +9,8 @@
   "status" : "ACTIVE",
   "metadata" : {
     "createdBy" : "dataops",
-    "updatedBy" : null,
+    "updatedBy" : "dataops",
     "createdDate" : "2026-04-01T20:29:30Z",
-    "updatedDate" : null
+    "updatedDate" : "2026-04-01T20:32:41Z"
   }
 }
